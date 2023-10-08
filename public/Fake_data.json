@@ -1,0 +1,98 @@
+[
+  {
+    "category": "Weddings",
+    "name": "Elegant Euphoria",
+    "price": 5000,
+    "short_description": "A romantic and luxurious wedding package with personalized details.",
+    "service_id": "WED001",
+    "image": [
+      "https://i.ibb.co/rptXrbZ/Wedding-1.jpg",
+      "https://i.ibb.co/HP7qxp3/Wedding-2.jpg"
+    ],
+    "details_description": "Our Elegant Euphoria package includes a dedicated wedding planner, venue selection assistance, floral arrangements, catering, and more. We'll ensure every element of your wedding reflects your unique style and love story."
+  },
+  {
+    "category": "Birthday Parties",
+    "name": "Whimsical Wonderland",
+    "price": 800,
+    "short_description": "A magical birthday celebration with enchanting decorations, fun activities, and delectable treats.",
+    "service_id": "BDAY001",
+    "image": [
+      "https://i.ibb.co/9NVb6Dn/Birthday-1.jpg",
+      "https://i.ibb.co/3Rz9vZY/Birthday-2.jpg"
+    ],
+    "details_description": "The Whimsical Wonderland package offers custom-themed decor, entertainment options, a delicious cake, and party favors. Let us create a whimsical atmosphere for your special day."
+  },
+  {
+    "category": "Anniversaries",
+    "name": "Timeless Romance",
+    "price": 1200,
+    "short_description": "A romantic and intimate anniversary celebration to cherish your years together.",
+    "service_id": "ANN001",
+    "image": [
+      "https://i.ibb.co/Mn93x9q/Anniversaries-1.jpg",
+      "https://i.ibb.co/RgB2THC/Anniversaries-2.jpg"
+    ],
+    "details_description": "Our Timeless Romance package includes a private venue, candlelit dinner, personalized decor, and a photographer to capture the moments. Celebrate your love story in style."
+  },
+  {
+    "category": "Engagement Parties",
+    "name": "Sparkling Soiree",
+    "price": 900,
+    "short_description": "A glamorous and lively gathering to celebrate your engagement with family and friends.",
+    "service_id": "ENG001",
+    "image": [
+      "https://i.ibb.co/xDRY7T6/Engagement-1.jpg",
+      "https://i.ibb.co/pKLzBFT/Engagement-2.jpg"
+    ],
+    "details_description": "The Sparkling Soiree package offers elegant decor, a dance floor, catering, and a photographer to capture the joyous moments. Let's make your engagement party a night to remember."
+  },
+  {
+    "category": "Retirement Parties",
+    "name": "Golden Farewell",
+    "price": 700,
+    "short_description": "A heartfelt and memorable retirement celebration to honor a cherished colleague.",
+    "service_id": "RET001",
+    "image": [
+      "https://i.ibb.co/z4L4kfm/Retirement-1.jpg",
+      "https://i.ibb.co/QjjfzQ7/Retirement-2.jpg"
+    ],
+    "details_description": "Our Golden Farewell package includes personalized tributes, a farewell speech setup, catering, and a photo booth for capturing memories. Give your colleague a golden send-off."
+  },
+  {
+    "category": "Baby Shower",
+    "name": "Sweet Beginnings",
+    "price": 600,
+    "short_description": "A charming and cozy baby shower to welcome the newest addition to the family.",
+    "service_id": "BABY001",
+    "image": [
+      "https://i.ibb.co/6BzpyGN/Baby-Shower-1.jpg",
+      "https://i.ibb.co/x1CY576/Baby-Shower-2.jpg"
+    ],
+    "details_description": "The Sweet Beginnings package offers adorable decor, fun games, a dessert table, and a keepsake for the parents-to-be. Celebrate this special moment with sweetness and joy."
+  },
+  {
+    "category": "Beauty Parlor",
+    "name": "Glamour Makeovers",
+    "price": 300,
+    "short_description": "Indulge in a pampering session with professional hair and makeup artists for a picture-perfect look.",
+    "service_id": "BEAUTY001",
+    "image": [
+      "https://i.ibb.co/xgYd4BT/Grooming-1.jpg",
+      "https://i.ibb.co/zrnk1pK/Grooming-2.jpg"
+    ],
+    "details_description": "Our Glamour Makeovers service offers a complete makeover experience, including hairstyling, makeup application, and skincare consultation. Our skilled artists will enhance your natural beauty, ensuring you look and feel your best for your special event."
+  },
+  {
+    "category": "Funerals",
+    "name": "Solemn Send-off",
+    "price": 600,
+    "short_description": "A dignified funeral service to honor and remember a loved one.",
+    "service_id": "FUNERAL001",
+    "image": [
+      "https://i.ibb.co/PDcphC4/Funeral-1.jpg",
+      "https://i.ibb.co/DG4qx2L/Funeral-2.jpg"
+    ],
+    "details_description": "Our Solemn Send-off service offers a dignified farewell, including a beautiful memorial setup, flower arrangements, and support for grieving family and friends. We aim to create a respectful and meaningful ceremony to honor the departed."
+  }
+]

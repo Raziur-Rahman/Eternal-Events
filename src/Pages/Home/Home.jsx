@@ -1,9 +1,11 @@
 
+import Footer from "../../Components/Footer/Footer";
+
 
 const Home = () => {
     return (
         <div>
-            this is from home
+            <Footer></Footer>
         </div>
     );
 };

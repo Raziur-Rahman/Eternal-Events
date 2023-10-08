@@ -34,6 +34,10 @@ const Register = () => {
             setRegisterError("password Should have at least one capital latter..");
             return;
         }
+        else if(!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
+            setRegisterError("password Should have at least one Special character...");
+            return;
+        }
         else if (!isChecked) {
             setRegisterError("You have to accept our terms and conditions");
             return;
