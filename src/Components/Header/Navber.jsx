@@ -44,8 +44,8 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <>
-                            <span>{user?.displayName}</span>
-                            <span><img className="w-2/3 rounded-full" src={user?.profilePic} alt="" /></span>
+                            <span className="font-semibold text-xl">{user?.displayName}</span>
+                            <span><img className="w-[50px] mx-4 rounded-full" src={user?.photoURL} alt="picture" /></span>
                             <a onClick={handleLogOut} className="btn">Sign Out</a>
                         </> : <Link to="/login"> <button className="btn ">Sign In</button> </Link>
                     }
