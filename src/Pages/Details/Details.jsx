@@ -26,10 +26,10 @@ const Details = () => {
 
         const newFav = [];
 
-        const previousFav = JSON.parse(localStorage.getItem('Evant_Favorites'));
+        const previousFav = JSON.parse(localStorage.getItem('Event_Favorites'));
         if (!previousFav) {
             newFav.push(details)
-            localStorage.setItem('Evant_Favorites', JSON.stringify(newFav))
+            localStorage.setItem('Event_Favorites', JSON.stringify(newFav))
             swal("Thank you", "Package Added to Favorites", "success");
 
         }
@@ -43,7 +43,7 @@ const Details = () => {
             }
             else {
                 newFav.push(...previousFav, details)
-                localStorage.setItem('Evant_Favorites', JSON.stringify(newFav))
+                localStorage.setItem('Event_Favorites', JSON.stringify(newFav))
                 swal("Thank you", "Package Added to Favorites", "success");
 
             }
@@ -53,10 +53,10 @@ const Details = () => {
 
         const newToCart = [];
 
-        const previousCart = JSON.parse(localStorage.getItem('Evant_Cart'));
+        const previousCart = JSON.parse(localStorage.getItem('Event_Cart'));
         if (!previousCart) {
             newToCart.push(details)
-            localStorage.setItem('Evant_Cart', JSON.stringify(newToCart))
+            localStorage.setItem('Event_Cart', JSON.stringify(newToCart))
             swal("Thank you", "Package Added to Cart", "success");
         }
         else {
@@ -68,7 +68,7 @@ const Details = () => {
             }
             else {
                 newToCart.push(...previousCart, details)
-                localStorage.setItem('Evant_Cart', JSON.stringify(newToCart))
+                localStorage.setItem('Event_Cart', JSON.stringify(newToCart))
                 swal("Thank you", "Package Added to Cart", "success");
 
             }
@@ -77,8 +77,7 @@ const Details = () => {
 
 
     const { name, image, details_description, price } = details;
-    console.log(details);
-
+    
     return (
         <div className="px-2 lg:px-28">
             <img className="w-full" src={image} alt="" />

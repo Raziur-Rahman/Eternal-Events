@@ -13,7 +13,7 @@ const Register = () => {
     const [success, setSuccess] = useState('');
     const [show, setShow] = useState(false);
 
-    const {createUser} = useContext(AuthContext);
+    const {UserRegitration} = useContext(AuthContext);
 
     const handleLogIn = e => {
         e.preventDefault();
@@ -44,7 +44,7 @@ const Register = () => {
         }
 
         // create User in firebase by context api
-        createUser( email, password)
+        UserRegitration( email, password)
             .then(userCredential => {
                 const user = userCredential.user;
                 console.log(userCredential.user)
