@@ -1,29 +1,42 @@
 import { useContext } from "react";
 import { Link, NavLink, useNavigate} from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, GoogleLogin } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                console.log("User Logged Out Successful...")
+                toast("User Logged Out Successful...")
                 navigate("/");
             })
             .catch((error) => {
                 console.error(error)
             })
-
-        
-
+    }
+    const handleGoogleLogin =() =>{
+        GoogleLogin()
+        .then(result =>{
+            console.log(result.user);
+            toast("Login SuccessFull!!!")
+            navigate("/")
+        })
+        .catch(error => {
+            console.error(error);
+            toast(`${error}`)
+        })
     }
 
     const NavLinks = <>
         <li className="font-semibold"> <NavLink to='/'>Home</NavLink> </li>
+        <li className="font-semibold"> <NavLink to='/register'>Register</NavLink> </li>
         <li className="font-semibold"> <NavLink to='/cart'>Cart</NavLink> </li>
+
         {user && <>
             <li className="font-semibold"> <NavLink to='/favorites'>Favorites</NavLink> </li>
             <li className="font-semibold"> <NavLink to='/dashboard'>Dashboard</NavLink> </li>
@@ -33,7 +46,7 @@ const Navbar = () => {
 
     return (
         <nav>
-            <div className="navbar lg:px-32 bg-base-100">
+            <div className="navbar flex flex-col md:flex-row space-y-3 lg:px-10 bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -43,24 +56,29 @@ const Navbar = () => {
                             {NavLinks}
                         </ul>
                     </div>
-                    <Link to="/"> <button className="btn btn-ghost normal-case text-xl">Event Manegment</button> </Link>
+                    <Link to="/"> <button className="btn btn-ghost normal-case text-xl">Eternal Events</button> </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {NavLinks}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbe-center md:navbar-end">
                     {
                         user ? <>
                             <span className="font-semibold text-xl">{user?.displayName}</span>
                             <span><img className="w-[50px] mx-4 rounded-full" src={user?.photoURL} alt="picture" /></span>
                             <a onClick={handleLogOut} className="btn">Sign Out</a>
-                        </> : <Link to="/login"> <button className="btn ">Sign In</button> </Link>
+                        </> : <>
+                        <button onClick={handleGoogleLogin} className="btn btn-outline mr-2">Login with google</button>
+                        <Link to="/login"> <button className="btn ">Sign In</button> </Link>
+
+                        </>
                     }
 
                 </div>
             </div>
+            <ToastContainer/>
         </nav>
     );
 };

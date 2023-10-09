@@ -5,7 +5,6 @@ const Services = ({service}) => {
 
     const navigate = useNavigate();
 
-    console.log(service);
     const {category, short_description, price, image, service_id} = service;
 
 
@@ -30,5 +29,5 @@ const Services = ({service}) => {
 export default Services;
 
 Services.propTypes ={
-    service: PropTypes.node
+    service: PropTypes.object
 }

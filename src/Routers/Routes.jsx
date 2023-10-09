@@ -8,11 +8,13 @@ import DashBoard from "../Components/DashBoard/DashBoard";
 import Favorites from "../Components/Favorites/Favorites";
 import Cart from "../Components/Cart/Cart";
 import Details from "../Pages/Details/Details";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const routes = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -29,7 +31,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                element: <Details></Details>,
+                element: <PrivateRoutes><Details></Details></PrivateRoutes>,
                 loader: () => fetch("/public/Fake_data.json")
             },
             {

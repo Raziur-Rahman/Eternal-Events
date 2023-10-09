@@ -2,14 +2,14 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const LogIn = () => {
 
     const navigate = useNavigate();
 
-    const [LogInError, setLogInError] = useState('');
-    const [success, setSuccess] = useState('');
     const [show, setShow] = useState(false);
 
     const { UserLogIn } = useContext(AuthContext);
@@ -22,17 +22,14 @@ const LogIn = () => {
 
         console.log(email , password);
 
-        setLogInError('');
-        setSuccess('')
-
         UserLogIn( email, password)
         .then(result =>{
-            setSuccess("Logged In Successful");
+            toast("Login Successful!!")
             console.log(result.user);
-            navigate('/')
+            navigate("/")
         })
         .catch(error => {
-            setLogInError(error.message);
+            toast(`${error}`)
             console.error(error);
         })
     }
@@ -75,16 +72,13 @@ const LogIn = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                             <div className="text-center">
-                                <p>New Here? <Link className="text-blue-600 link-hover" to="/register">Please Register</Link></p>
+                                <p>New Here? <Link className="text-blue-600 link-hover" to="/register">Please Register </Link></p>
                             </div>
-                            {LogInError && <p className="text-blue-600">{LogInError}</p>
-                            }
-                            {success && <p className="text-blue-600">{success}</p>
-                            }
                         </form>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

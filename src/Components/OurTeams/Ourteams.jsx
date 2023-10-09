@@ -14,14 +14,13 @@ const Ourteams = () => {
         
 
     }, [])
-    console.log(teams);
 
     return (
         <div>
             <div className="my-5">
                 <h1 className="text-4xl text-amber-600 font-semibold text-center">Meet Our Briliant Team Members</h1>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 px-5 my-5 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 px-10 my-5 ">
                 {
                     teams.map(member => <Member key={member.id} member={member}></Member>)
                 }
