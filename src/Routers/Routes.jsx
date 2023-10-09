@@ -7,7 +7,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import DashBoard from "../Components/DashBoard/DashBoard";
 import Favorites from "../Components/Favorites/Favorites";
 import Cart from "../Components/Cart/Cart";
-import Details from "../Components/Details/Details";
+import Details from "../Pages/Details/Details";
 
 const routes = createBrowserRouter([
     {
@@ -16,7 +16,8 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader: () => fetch("/public/Fake_data.json")
             },
             {
                 path: '/login',
@@ -27,8 +28,9 @@ const routes = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/details',
-                element: <Details></Details>
+                path: '/details/:id',
+                element: <Details></Details>,
+                loader: () => fetch("/public/Fake_data.json")
             },
             {
                 path: '/cart',

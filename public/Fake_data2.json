@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Thompson",
+    "title": "Senior Event Planner",
+    "bio": "With over a decade of experience, Sarah is a seasoned event planner known for her meticulous attention to detail and creative flair. Her passion lies in turning visions into reality, ensuring every event is a seamless, memorable experience.",
+    "image": "https://i.ibb.co/0fN06DK/Official-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "David Rodriguez",
+    "title": "Chief Operations Officer",
+    "bio": "As the COO, David oversees the logistical aspects of our events. With a background in project management, he ensures that every element, from venue selection to vendor coordination, aligns perfectly for a flawless event.",
+    "image": "https://i.ibb.co/Rz9m9T5/Official-2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Jennifer Chen",
+    "title": "Head of Design and Decor",
+    "bio": "Jennifer brings a unique blend of artistic vision and practicality to our team. Her eye for design transforms spaces into enchanting environments, while her strategic approach ensures that aesthetics harmonize seamlessly with functionality.",
+    "image": "https://i.ibb.co/bmRhwh8/Official-3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Michael Turner",
+    "title": "Finance and Budget Analyst",
+    "bio": "Michael's expertise in financial planning and budget management ensures that our events are not only unforgettable but also cost-effective. With a keen eye for detail, he ensures every dollar is allocated for maximum impact.",
+    "image": "https://i.ibb.co/pnQ3vr8/Official-4.jpg"
+  }
+]
