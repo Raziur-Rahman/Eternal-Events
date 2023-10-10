@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ShowCartDetails from "../ShowCartDetails/ShowCartDetails";
+import Footer from "../Footer/Footer";
 
 
 const Favorites = () => {
@@ -19,20 +20,23 @@ const Favorites = () => {
 
     return (
         <div>
-            {
-                nofound ? <p>No data found</p> : <>
-                    <div >
-                        <table className="table">
-                            <tbody>
-                                {
-                                    cards.map(item => <ShowCartDetails key={item.service_id} cartItem={item}></ShowCartDetails>)
-                                }
-                            </tbody>
+            <div>
+                {
+                    nofound ? <p>No data found</p> : <>
+                        <div className="p-16 bg-base-200">
+                            <table className="table">
+                                <tbody>
+                                    {
+                                        cards.map(item => <ShowCartDetails key={item.service_id} cartItem={item}></ShowCartDetails>)
+                                    }
+                                </tbody>
 
-                        </table>
-                    </div>
-                </>
-            }
+                            </table>
+                        </div>
+                    </>
+                }
+            </div>
+            <Footer></Footer>
         </div>
     );
 };

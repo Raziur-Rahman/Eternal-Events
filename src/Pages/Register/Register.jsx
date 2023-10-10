@@ -1,16 +1,16 @@
-// import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-// import auth from "../../firebase/firebase.config";
+
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
 
-    const [registerError, setRegisterError] = useState('');
-    const [success, setSuccess] = useState('');
     const [show, setShow] = useState(false);
 
     const {UserRegitration} = useContext(AuthContext);
@@ -22,33 +22,29 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         const isChecked = e.target.checkbox.checked;
-        console.log(isChecked);
-        setRegisterError('');
-        setSuccess('');
 
         if (password.length < 6) {
-            setRegisterError("Password should be at least 6 digit");
+            toast("Password should be at least 6 digit");
             return;
         }
         else if (!/[A-Z]/.test(password)) {
-            setRegisterError("password Should have at least one capital latter..");
+            toast("password Should have at least one capital latter..");
             return;
         }
         else if(!/[!@#$%^&*(),.?":{}|<>]/.test(password)){
-            setRegisterError("password Should have at least one Special character...");
+            toast("password Should have at least one Special character...");
             return;
         }
         else if (!isChecked) {
-            setRegisterError("You have to accept our terms and conditions");
+            toast("You have to accept our terms and conditions")
             return;
         }
 
-        // create User in firebase by context api
         UserRegitration( email, password)
             .then(userCredential => {
                 const user = userCredential.user;
                 console.log(userCredential.user)
-                setSuccess("User created Successfuly")
+                toast("User created Successfuly....")
 
                 updateProfile(user, {
                     displayName: Name,
@@ -58,7 +54,7 @@ const Register = () => {
             })
             .catch(error => {
                 console.error(error);
-                setRegisterError(error.message);
+                toast("Registration failed...")
             })
     }
     return (
@@ -114,14 +110,11 @@ const Register = () => {
                             <div>
                                 <p>Already Registered? <Link className="text-blue-600 link-hover" to="/login">Please Login!!!</Link></p>
                             </div>
-                            {registerError && <p className="text-blue-600">{registerError}</p>
-                            }
-                            {success && <p className="text-blue-600">{success}</p>
-                            }
                         </form>
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

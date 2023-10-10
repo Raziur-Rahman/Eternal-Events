@@ -45,7 +45,7 @@ const Navbar = () => {
     </>
 
     return (
-        <nav>
+        <nav className="shadow-xl">
             <div className="navbar flex flex-col md:flex-row space-y-3 lg:px-10 bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">

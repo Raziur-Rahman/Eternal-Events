@@ -19,7 +19,7 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element:<Home></Home>,
-                loader: () => fetch("/public/Fake_data.json")
+                loader: () => fetch("/Fake_data.json")
             },
             {
                 path: '/login',
@@ -32,7 +32,7 @@ const routes = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoutes><Details></Details></PrivateRoutes>,
-                loader: () => fetch("/public/Fake_data.json")
+                loader: () => fetch("/Fake_data.json")
             },
             {
                 path: '/cart',
